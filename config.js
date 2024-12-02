@@ -4,9 +4,10 @@ const {
 } = require('@solana/web3.js')
 const bs58 = require('bs58')
 
-const PRIVATE_KEY = "aaaaa";
-const endpoint = "aaaaa";
-const NFT_STORAGE_TOKEN = 'aaaaa';
+const PRIVATE_KEY = "aaaaaaa";
+const endpoint = "aaaaaaa";
+const PINATA_GATEWAY = "aaaaaaa";
+const PINATA_SECRET_JWT = "aaaaaaa";
 
 // Example of created token: https://solscan.io/token/Bj3EDqheEpjSVSwJxWkxYNpPHX1PWQKm7AtpQj8eCMcQ
 
@@ -17,9 +18,9 @@ const revokeFreezeBool  = false
 let tokenInfo = {
     amount: 1000000000,
     decimals: 9,
-    metadata: '',
-    symbol: 'TBS',
-    tokenName: 'Teletubbies'
+    symbol: 'LPT ',
+    tokenName: 'Lazy Peanut',
+    metadata: '' //add metadata url here if you already have one else leave it empty
 }
 
 
@@ -36,15 +37,13 @@ let metaDataforToken = {
                             Alright, like send the address through, please
                             `,
     "extensions": {
-        "website": "https://kokiez.com/",
-        "twitter": "https://twitter.com/kokiez",
-        "telegram": "https://t.me/kokiez"
+        "twitter": "https://twitter.com/lazydevpro",
+        "telegram": "https://t.me/lazydevpro"
     },
-    "tags": [ "SOLANA","MEME", "KOKIEZ"
+    "tags": [ "SOLANA","MEME", "LAZYDEVPRO"
     ],
     "creator": {
-        "name": "KOKIEZ",
-        "site": "https://github.com/kokiez"
+        "name": "LAZYDEVPRO",
     }
 }
 
@@ -59,7 +58,8 @@ const myKeyPair = Keypair.fromSecretKey(new Uint8Array(bs58.decode(PRIVATE_KEY))
 module.exports = {
     connection,
     myKeyPair,
-    NFT_STORAGE_TOKEN,
+    PINATA_SECRET_JWT,
+    PINATA_GATEWAY,
     revokeMintBool,
     revokeFreezeBool,
     tokenInfo,

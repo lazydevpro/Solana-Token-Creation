@@ -47,7 +47,7 @@
 <p><strong>endpoint</strong>: Replace <code>aaaaa</code> with your RPC HTTP(S) URL.</p>
 </li>
 <li>
-<p><strong>NFT_STORAGE_TOKEN</strong>: Goto <a href="https://nft.storage/">https://nft.storage/</a>. Then sign up, you can use temp mail. Then goto <a href="https://nft.storage/manage/">Manage API Keys - NFT Storage</a> and click new key. It will generate a key for you. Copy it and  <code>aaaaa</code> with your nft.storage api key. <em><strong>Note</strong></em>: Nft.storage is free storage for tokens metadata.</p>
+<p><strong>PINATA_SECRET_KEY</strong>: Goto <a href="https://app.pinata.cloud/">https://app.pinata.cloud/</a>. Sign up for an account (they offer a generous free tier). Navigate to API Keys section and create a new key. You'll need both the API Key and API Secret. Replace <code>aaaaa</code> with your Pinata API key. <em><strong>Note</strong></em>: Pinata is a reliable IPFS storage service for token metadata and images.</p>
 </li>
 <li>
 <p><strong>revokeMintBool</strong>: If you dont want to revoke mint, set it to <code>false</code>. By default it has been set to <code>true</code>.</p>
@@ -88,6 +88,17 @@
 </ul>
 </li>
 </ol>
+</li>
+<li>
+<p><strong>Alternative Storage Providers</strong>: If you want to use any other storage provider (like AWS S3, Google Cloud Storage, etc.):
+<ol>
+<li>First upload your token image to your preferred provider</li>
+<li>Get the public URL of the uploaded image</li>
+<li>Create your token.json file and add the image URL to it</li>
+<li>Upload the token.json file</li>
+<li>Finally, add the token.json URL to <code>tokenInfo.metadata</code> in config.js</li>
+</ol>
+This gives you flexibility to use any storage solution you prefer.</p>
 </li>
 </ul>
 </li>
